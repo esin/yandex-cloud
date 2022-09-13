@@ -1,10 +1,12 @@
 #!/bin/bash
 
+### Need to run netcat server
 rm /tmp/fifo || true
 mkfifo /tmp/fifo
 LISTENIP=127.0.0.1
 cat /tmp/fifo | nc -lvk4N $LISTENIP $PORT &
 echo "netcat server started"
+### Need to run netcat server
 
 
 
